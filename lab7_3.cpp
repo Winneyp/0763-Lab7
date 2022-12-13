@@ -2,14 +2,49 @@
 
 using namespace std;
 
+int adiff(int a, int b)
+{
+  int c=0;
+  if (a>360 or a<-360)
+  {
+    a = a%360;
+  }
+  if (b>360 or b<-360)
+  {
+    b = b%360;
+  }
+
+  if (a<0)
+  {
+    a = 360+a;
+  }
+  if (b<0)
+  {
+    b = 360+b;
+  }
+
+  c = b-a;
+  if (c<0)
+  {
+    c=-c;
+  }
+
+  if (c>180)
+  {
+    c = 360-c;
+  }
+  return c;
+
+}
 
 int main(){
-  cout << adiff(180,270);
-  cout << adiff(210,45);
-  cout << adiff(0,360);
-  cout << adiff(10,350);
-  cout << adiff(95,260);
-  cout << adiff(90,-90);
-  cout << adiff(1000,280);
-  cout << adiff(60,244);
+  int a=0, b=0;
+
+  cout << "a = ";
+  cin >> a;
+  cout << "b = ";
+  cin >> b;
+
+  cout << adiff(a,b);
+
 }
